@@ -1,0 +1,174 @@
+
+.digits {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-area: d;
+    gap: 5px;
+}
+
+.operators {
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    grid-area: o;
+    gap: 5px;
+}
+
+.operators_digits {
+    width: 100%;
+    display: grid;
+
+    grid-template-areas: 
+                        "d d d o"
+                        "d d d o"
+                        "d d d o"
+                        "d d d o"
+                        "d d d o"
+                        ;
+
+    gap: 5px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+
+.calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 10px 30px;
+
+    background: linear-gradient(to bottom,  #707070, #222222);
+
+    max-width: 310px;
+
+    border-radius: 20px;
+}
+
+.lightTheme {
+    background: linear-gradient(to bottom,  #d6d5d5, #5c5c5c);
+}
+
+.inputArea {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    outline: none;
+
+    width: 300px;
+    height:150px;
+    border: none;
+    border-radius: 2px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+
+    color: rgb(189, 191, 194);
+
+    text-align: right;
+
+    overflow: hidden;
+
+    background-color: transparent;
+}
+
+.lightTheme .inputArea {
+    color:rgb(39, 39, 39);
+}
+
+.digits button, .operators button, .scrollbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 58px;
+    width: 60px;
+    border-radius: 50%;
+    background: radial-gradient(rgb(82, 82, 82) 40%, rgb(39, 39, 39));
+    color: rgba(255, 255, 255, 0.829);
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: auto;
+
+    box-shadow: 2px 3px 6px rgba(0,0,0,0.6), inset 1px 1px 1px rgba(255,255,255, 0.7);
+    cursor: pointer;
+
+    transition: all ease-in-out 250ms;
+}
+
+.lightTheme .digits button, .operators button, .scrollbtn{
+}
+
+.digits button:hover, .operators button:hover, .scrollbtn:hover{
+    background: radial-gradient(rgb(82, 82, 82) 20%, rgb(39, 39, 39));
+    transform:scale(0.95);
+}
+
+
+
+.operators button {
+    background: rgb(54, 4, 54);
+}
+
+button svg{
+    pointer-events: none;
+}
+
+.on-off-btn {
+    width: 40px;
+    height: 15px;
+
+    background: radial-gradient(rgb(82, 82, 82) 40%, rgb(39, 39, 39));
+    box-shadow: 2px 3px 6px rgba(0,0,0,0.6), inset 1px 1px 1px rgba(255,255,255, 0.7);
+
+    border-radius: 20px;
+
+    padding: 5px;
+
+    position: relative;
+
+}
+
+.on-off-btn div {
+    width: 15px;
+    height: 15px;
+
+    left: 5px;
+
+    background-color: rgb(219, 219, 219);
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    position: absolute;
+
+    transition: all ease-in-out 280ms;
+    
+}
+
+.on div{
+    left: calc(100% - 20px);
+}
+
+
+.operationArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    margin: 15px 0;
+}
+
+.scrollbtn {
+    margin:unset;
+    margin-bottom: 5px;
+}
